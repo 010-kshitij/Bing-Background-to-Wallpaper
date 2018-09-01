@@ -1,14 +1,18 @@
+# Import Section
 import requests
 import os
 import json
 
+# Functions Section
 def set_wallpaper(file_link):
     directory_full_path = os.path.abspath("./")
     os.system("gsettings set org.gnome.desktop.background picture-uri {}/{}".format(directory_full_path, file_link))
 
+# Declaration Section
 link = "https://www.bing.com/HPImageArchive.aspx?format=js&mbl=1&idx=0&n=1&cc=in"
 bing_url = "http://www.bing.com"
 
+# Process Section
 page = requests.get(link, "html.parser")
 html = page.text
 
